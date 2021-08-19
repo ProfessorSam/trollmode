@@ -1,0 +1,11 @@
+name: Trollmode
+version: '0.0.1'
+author: Professor_Sam
+main: com.github.professorSam.trollmode.main.Main
+commands: 
+   trollmode:
+      description: aktiviert den Trollmode
+      permission: trollmode.use
+permissions: 
+   trollmode.use:
+      default: false
