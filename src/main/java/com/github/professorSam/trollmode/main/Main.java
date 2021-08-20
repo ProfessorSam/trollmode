@@ -7,7 +7,8 @@ import com.github.professorSam.trollmode.commands.Trollmode;
 public class Main extends JavaPlugin{
 	
 	private Main plugin;
-	private String prefix;
+	private static String prefix;
+	private static boolean trollmodeActive;
 	
 	@Override
 	public void onEnable() {
@@ -16,6 +17,7 @@ public class Main extends JavaPlugin{
 		plugin.saveDefaultConfig();
 		plugin.saveConfig();
 		prefix = getConfig().getString("Settings.Prefix");
+		setTrollmodeActive(false);
 		
 		this.getCommand("trollmode").setExecutor(new Trollmode());
 		getLogger().info("Trollmode erfolgreich geladen!");
@@ -25,7 +27,16 @@ public class Main extends JavaPlugin{
 		return plugin;
 	}
 
-	public String getPrefix() {
+	public static String getPrefix() {
 		return prefix;
 	}
+
+	public static boolean isTrollmodeActive() {
+		return trollmodeActive;
+	}
+
+	public static void setTrollmodeActive(boolean trollmodeActive) {
+		Main.trollmodeActive = trollmodeActive;
+	}
+
 }
