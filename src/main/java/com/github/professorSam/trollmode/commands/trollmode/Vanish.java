@@ -1,25 +1,16 @@
 package com.github.professorSam.trollmode.commands.trollmode;
 
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class Vanish {
 	public static void setVanish(Player player) {
-		for (Player players : Bukkit.getServer().getOnlinePlayers()) {
-			if (players == player) {
-				continue;
-			} else if (players.hasPermission("trollmode.use")) {
-				players.sendMessage(player.getDisplayName() + " §cist im vanish");
-				continue;
-			}
-
-			players.hidePlayer(player);
-		}
+		PotionEffect invisible = new PotionEffect(PotionEffectType.INVISIBILITY, Integer.MAX_VALUE, 250, false, false);
+		player.addPotionEffect(invisible);
 	}
 
 	public static void removeVanish(Player player) {
-		 for (Player players : Bukkit.getServer().getOnlinePlayers()) {
-			 players.showPlayer(player);
-		 }    
+		 player.removePotionEffect(PotionEffectType.INVISIBILITY);
 	}
 }
