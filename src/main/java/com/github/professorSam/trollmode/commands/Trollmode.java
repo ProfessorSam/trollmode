@@ -8,6 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import com.github.professorSam.trollmode.commands.trollmode.Control;
 import com.github.professorSam.trollmode.commands.trollmode.Explode;
 import com.github.professorSam.trollmode.commands.trollmode.Freeze;
 import com.github.professorSam.trollmode.commands.trollmode.Jail;
@@ -91,6 +92,12 @@ public class Trollmode implements CommandExecutor{
 							
 							Jail.toggleJail(toUnJail, true);
 							player.sendMessage(Main.getPrefix() + "§cDer Spieler ist befreit!");
+						}
+					}
+					else if(args.length == 2 && args[0].equalsIgnoreCase("control")) {
+						if(Bukkit.getPlayerExact(args[1]) != null) {
+							Player toControl = Bukkit.getPlayer(args[1]);
+							Control.togglePlayerControl(toControl, player);
 						}
 					}
 					else {
