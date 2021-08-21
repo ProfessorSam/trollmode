@@ -9,7 +9,7 @@ import com.github.professorSam.trollmode.listener.RegisterPlayerOnJoin;
 
 public class Main extends JavaPlugin{
 	
-	private Main plugin;
+	private static Main plugin;
 	private static String prefix;
 	private static boolean trollmodeActive;
 	
@@ -27,8 +27,8 @@ public class Main extends JavaPlugin{
 		Bukkit.getPluginManager().registerEvents(new RegisterPlayerOnJoin(), this);
 		getLogger().info("Trollmode erfolgreich geladen!");
 	}
-
-	public Main getPlugin() {
+	
+	public static Main getPlugin() {
 		return plugin;
 	}
 

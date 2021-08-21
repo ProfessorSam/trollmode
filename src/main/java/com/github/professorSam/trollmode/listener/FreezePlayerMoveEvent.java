@@ -4,6 +4,7 @@ import org.bukkit.Location;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.util.Vector;
 
 import com.github.professorSam.trollmode.commands.trollmode.Freeze;
 import com.github.professorSam.trollmode.main.Main;
@@ -24,6 +25,8 @@ public class FreezePlayerMoveEvent implements Listener {
 							.teleport(new Location(from.getWorld(), x, from.getY(), z, from.getYaw(), from.getPitch()));
 
 				}
+				Vector zeroVelocity = new Vector().zero();
+				event.getPlayer().setVelocity(zeroVelocity);
 			}
 		}
 	}
