@@ -1,8 +1,11 @@
 package com.github.professorSam.trollmode.main;
 
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.github.professorSam.trollmode.commands.Trollmode;
+import com.github.professorSam.trollmode.listener.FreezePlayerMoveEvent;
+import com.github.professorSam.trollmode.listener.RegisterPlayerOnJoin;
 
 public class Main extends JavaPlugin{
 	
@@ -20,6 +23,8 @@ public class Main extends JavaPlugin{
 		setTrollmodeActive(false);
 		
 		this.getCommand("trollmode").setExecutor(new Trollmode());
+		Bukkit.getPluginManager().registerEvents(new FreezePlayerMoveEvent(), this);
+		Bukkit.getPluginManager().registerEvents(new RegisterPlayerOnJoin(), this);
 		getLogger().info("Trollmode erfolgreich geladen!");
 	}
 
