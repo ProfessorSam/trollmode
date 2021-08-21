@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 
 import com.github.professorSam.trollmode.commands.trollmode.Explode;
 import com.github.professorSam.trollmode.commands.trollmode.Freeze;
+import com.github.professorSam.trollmode.commands.trollmode.Jail;
 import com.github.professorSam.trollmode.commands.trollmode.Vanish;
 import com.github.professorSam.trollmode.main.Main;
 
@@ -28,6 +29,7 @@ public class Trollmode implements CommandExecutor{
 						player.sendMessage(Main.getPrefix() + "§9/trollmode freeze [Spieler] §7- Lässt einen Spieler sich nicht mehr bewegen");
 						player.sendMessage(Main.getPrefix() + "§9/trollmode explode [Spieler] §7- Jagt einen Spieler in die Luft");
 						player.sendMessage(Main.getPrefix() + "§9/trollmode jail [Spieler] §7- Sperrt einen Spieler in ein Bedrock Käfig");
+						player.sendMessage(Main.getPrefix() + "§9/trollmode unjail [Spieler] §7- Befreit einen Spieler aus einen Käfig");
 						player.sendMessage(Main.getPrefix() + "§9/trollmode control [Spieler] §7- Kontroliere einen Spieler");
 						player.sendMessage(Main.getPrefix() + "§e---Trollmode hilfe---");
 						return true;
@@ -75,6 +77,22 @@ public class Trollmode implements CommandExecutor{
 								player.sendMessage(Main.getPrefix() + "§cDieser Spieler ist nicht online!");
 							}
 						}
+					else if(args.length == 2 && args[0].equalsIgnoreCase("jail")) {
+						if(Bukkit.getPlayerExact(args[1]) != null) {
+							Player toJail = Bukkit.getPlayer(args[1]);
+							Jail.toggleJail(toJail, false);
+							player.sendMessage(Main.getPrefix() + "§cDer Spieler wird in einen Käfig gesteckt");
+							toJail.sendMessage(Main.getPrefix() + "§cDu wurdest in einen Käfig gesteckt");
+						}
+					}
+					else if(args.length == 2 && args[0].equalsIgnoreCase("unjail")) {
+						if(Bukkit.getPlayerExact(args[1]) != null) {
+							Player toUnJail = Bukkit.getPlayer(args[1]);
+							
+							Jail.toggleJail(toUnJail, true);
+							player.sendMessage(Main.getPrefix() + "§cDer Spieler ist befreit!");
+						}
+					}
 					else {
 						player.sendMessage(Main.getPrefix() + "§cDieser Sub-Command existiert nicht!");
 					}
