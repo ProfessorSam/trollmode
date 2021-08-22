@@ -12,6 +12,7 @@ import com.github.professorSam.trollmode.commands.trollmode.Control;
 import com.github.professorSam.trollmode.commands.trollmode.Explode;
 import com.github.professorSam.trollmode.commands.trollmode.Freeze;
 import com.github.professorSam.trollmode.commands.trollmode.Jail;
+import com.github.professorSam.trollmode.commands.trollmode.Tpall;
 import com.github.professorSam.trollmode.commands.trollmode.Vanish;
 import com.github.professorSam.trollmode.main.Main;
 
@@ -32,6 +33,8 @@ public class Trollmode implements CommandExecutor{
 						player.sendMessage(Main.getPrefix() + "§9/trollmode jail [Spieler] §7- Sperrt einen Spieler in ein Bedrock Käfig");
 						player.sendMessage(Main.getPrefix() + "§9/trollmode unjail [Spieler] §7- Befreit einen Spieler aus einen Käfig");
 						player.sendMessage(Main.getPrefix() + "§9/trollmode control [Spieler] §7- Kontroliere einen Spieler");
+						player.sendMessage(Main.getPrefix() + "§9/trollmode arrow [Spieler] §7- Spawnt jede Sekunde einen Pfeil über den Spieler");
+						player.sendMessage(Main.getPrefix() + "§9/trollmode tpall §7- Teleportiert alle Spieler zu dir");
 						player.sendMessage(Main.getPrefix() + "§e---Trollmode hilfe---");
 						return true;
 					}
@@ -43,7 +46,6 @@ public class Trollmode implements CommandExecutor{
 					else if(args.length == 1 && args[0].equalsIgnoreCase("unvanish")) {
 						Vanish.removeVanish(player);
 						player.sendMessage(Main.getPrefix() + "§cDu befindest dich nun nicht mehr im Vansish!");
-						return true;
 					}
 					else if(args.length == 2 && args[0].equalsIgnoreCase("freeze")) {
 						if(Bukkit.getPlayerExact(args[1]) != null) {
@@ -100,6 +102,10 @@ public class Trollmode implements CommandExecutor{
 							Control.togglePlayerControl(toControl, player);
 						}
 					}
+					else if(args.length == 1 && args[0].equalsIgnoreCase("tpall")) {
+						player.sendMessage(Main.getPrefix() + "§cEs wurden alle zu dir teleportiert");
+						Tpall.tpall(player);
+					}
 					else {
 						player.sendMessage(Main.getPrefix() + "§cDieser Sub-Command existiert nicht!");
 					}
@@ -113,8 +119,9 @@ public class Trollmode implements CommandExecutor{
 						players.playSound(player.getLocation(), Sound.GHAST_SCREAM2, 2F, 1F);
 						players.sendMessage(Main.getPrefix() + "§4Der Trollmode ist nun aktiviert!");
 						Freeze.registerFreezePlayer(players);
-						player.setGameMode(GameMode.CREATIVE);
+						Control.registerControlPlayer(players);
 					}
+					player.setGameMode(GameMode.CREATIVE);
 				}
 			}
 		}
