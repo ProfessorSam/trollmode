@@ -8,6 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import com.github.professorSam.trollmode.commands.trollmode.Arrow;
 import com.github.professorSam.trollmode.commands.trollmode.Control;
 import com.github.professorSam.trollmode.commands.trollmode.Explode;
 import com.github.professorSam.trollmode.commands.trollmode.Freeze;
@@ -106,6 +107,13 @@ public class Trollmode implements CommandExecutor{
 						player.sendMessage(Main.getPrefix() + "§cEs wurden alle zu dir teleportiert");
 						Tpall.tpall(player);
 					}
+					else if(args.length == 2 && args[0].equalsIgnoreCase("arrow")) {
+						if(Bukkit.getPlayerExact(args[1]) != null) {
+							Player toArrow = Bukkit.getPlayer(args[1]);
+							Arrow.toggleArrow(toArrow);
+							player.sendMessage(Main.getPrefix() + "§cDer Spieler wird nun mit Pfeilen abgeschossen!");
+						}
+					}
 					else {
 						player.sendMessage(Main.getPrefix() + "§cDieser Sub-Command existiert nicht!");
 					}
@@ -120,8 +128,12 @@ public class Trollmode implements CommandExecutor{
 						players.sendMessage(Main.getPrefix() + "§4Der Trollmode ist nun aktiviert!");
 						Freeze.registerFreezePlayer(players);
 						Control.registerControlPlayer(players);
+						Arrow.registerArrowPlayer(players);
+						
 					}
+					Arrow.initArrow();
 					player.setGameMode(GameMode.CREATIVE);
+					player.sendMessage(Main.getPrefix() + "§cDu kannst mit /trollmode alle Subcommands dir ansehen!");
 				}
 			}
 		}
