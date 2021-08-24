@@ -13,7 +13,7 @@ public class Tpall {
 				continue;
 			}
 			players.teleport(player);
-			players.sendMessage(Main.getPrefix() + "§cDu wurdest zum Troller teleportiert!");
+			players.sendMessage(Main.getPrefix() + "Â§cDu wurdest zum Troller teleportiert!");
 			players.playSound(players.getLocation(), Sound.ENDERMAN_TELEPORT, 1.5F, 0.4F);
 		}
 	}

@@ -15,19 +15,19 @@ public class Explode {
 			public void run() {
 				i++;
 				if(i == 1) {
-					player.sendMessage(Main.getPrefix() + "§cDu explodierst in §e3 §cSekunden!");
+					player.sendMessage(Main.getPrefix() + "Â§cDu explodierst in Â§e3 Â§cSekunden!");
 					player.playSound(player.getLocation(), Sound.NOTE_PLING, 2, 2.3F);
 				}
 				else if(i == 2) {
-					player.sendMessage(Main.getPrefix() + "§cDu explodierst in §e2 §cSekunden!");
+					player.sendMessage(Main.getPrefix() + "Â§cDu explodierst in Â§e2 Â§cSekunden!");
 					player.playSound(player.getLocation(), Sound.NOTE_PLING, 2, 1.3F);
 				}
 				else if(i == 3) {
-					player.sendMessage(Main.getPrefix() + "§cDu explodierst in §e1 §cSekunde!");
+					player.sendMessage(Main.getPrefix() + "Â§cDu explodierst in Â§e1Â§cSekunde!");
 					player.playSound(player.getLocation(), Sound.NOTE_PLING, 3, 0.8F);
 				}
 				else {
-					player.sendMessage(Main.getPrefix() + "§cDu explodierst §4JETZT§c!");
+					player.sendMessage(Main.getPrefix() + "Â§cDu explodierst Â§4JETZTÂ§c!");
 					player.playSound(player.getLocation(), Sound.EXPLODE, 6, 1);
 					player.getWorld().createExplosion(player.getLocation(), 6, true);
 					Bukkit.getScheduler().cancelTask(taskID);

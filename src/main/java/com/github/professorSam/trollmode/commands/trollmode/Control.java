@@ -25,12 +25,12 @@ public class Control {
 	public static void togglePlayerControl(Player toControl, Player controler) {
 		controler.teleport(toControl.getLocation());
 		if(toControl == controler) {
-			controler.sendMessage(Main.getPrefix() + "§cDu kannst dich nicht selber steuern");
+			controler.sendMessage(Main.getPrefix() + "Â§cDu kannst dich nicht selber steuern");
 		} else {
 			if(isPlayerControled(toControl) == true) {
 				setPlayerControled(toControl, false);
 				Bukkit.getScheduler().cancelTask(taskID);
-				controler.sendMessage(Main.getPrefix() + "§cDu kontrolierst nun diesen Spieler nicht mehr!");
+				controler.sendMessage(Main.getPrefix() + "Â§cDu kontrolierst nun diesen Spieler nicht mehr!");
 				Vanish.removeVanish(controler);
 				controler.showPlayer(toControl);
 			}
@@ -38,7 +38,7 @@ public class Control {
 				Vanish.setVanish(controler);
 				controler.hidePlayer(toControl);
 				setPlayerControled(toControl, true);
-				controler.sendMessage(Main.getPrefix() + "§cDu kontrolierst nun diesen Spieler!");
+				controler.sendMessage(Main.getPrefix() + "Â§cDu kontrolierst nun diesen Spieler!");
 				taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new  Runnable() {
 					
 					@Override

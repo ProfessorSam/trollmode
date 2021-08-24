@@ -1,17 +1,19 @@
 #Trollmode
+
 ##Was ist Trollmode?
 
 Trollmode ist ein Plugin womit man Spieler in einem Minigame trollen kann. Trollmode bietet folgende Funktionen:
-* Arrow - Lässt jede Sekunde einen Pfeil auf den Spieler regnen
+* Arrow - LÃ¤sst jede Sekunde einen Pfeil auf den Spieler regnen
 * Control - Kontroliere den Spieler
-* Explode - Lässt den Spieler explodieren (Achtung! Map kann kaputt gehen!)
+* Explode - LÃ¤sst den Spieler explodieren (Achtung! Map kann kaputt gehen!)
 * Freeze - Friert einen Spieler ein
 * Jail - Sperrt den Spieler im Bedrock ein (Achtung! Map kann kaputt gehen!)
 * Tpall - Teleportiert alle Spieler zum Troller
 * Vanish - Macht dich unsichtbar
 
-##Welche Versionen werden Unterstützt?
-Trollmode unterstützt folgende Minecraft-Versionen:
+##Welche Versionen werden UnterstÃ¼tzt?
+
+Trollmode unterstÃ¼tzt folgende Minecraft-Versionen:
 * 1.8
 * 1.9
 * 1.10
@@ -23,5 +25,5 @@ Trollmode unterstützt folgende Minecraft-Versionen:
 * 1.16
 
 ##Sonstiges
-Es empfielt sich ein Cloudsystem wie z.B CloudNet v3 zu nutzen, da man somit ganz einfach die Map zurücksetzten kann. Man kann sonst ebenfalls die dementsprechende Funktion in der Config.yml deaktivieren oder ein Plugin zum zurücksetzten nutzen  __sollte das Minigame die Map nicht von alleine zurücksetzten__
 
+Es empfielt sich ein Cloudsystem wie z.B CloudNet v3 zu nutzen, da man somit ganz einfach die Map zurÃ¼cksetzten kann. Man kann sonst ebenfalls die dementsprechende Funktion in der Config.yml deaktivieren oder ein Plugin zum zurÃ¼cksetzten nutzen  __sollte das Minigame die Map nicht von alleine zurÃ¼cksetzten__
