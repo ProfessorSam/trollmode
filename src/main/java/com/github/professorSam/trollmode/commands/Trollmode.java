@@ -58,8 +58,8 @@ public class Trollmode implements CommandExecutor{
 							}
 							else {
 								Freeze.setPlayerFreeze(toFreeze, false);
-								player.sendMessage(Main.getPrefix() + toFreeze.getDisplayName() + "§4 wurde aufgetaut!");
-								toFreeze.sendMessage(Main.getPrefix() + "§4Du kannst dich wieder bewegen!");
+								player.sendMessage(Main.getPrefix() + toFreeze.getDisplayName() + "§c wurde aufgetaut!");
+								toFreeze.sendMessage(Main.getPrefix() + "§cDu kannst dich wieder bewegen!");
 							}
 								
 						}
@@ -104,7 +104,7 @@ public class Trollmode implements CommandExecutor{
 						}
 					}
 					else if(args.length == 1 && args[0].equalsIgnoreCase("tpall")) {
-						player.sendMessage(Main.getPrefix() + "§cEs wurden alle zu dir teleportiert");
+						player.sendMessage(Main.getPrefix() + "§cEs wurden alle Spieler zu dir teleportiert");
 						Tpall.tpall(player);
 					}
 					else if(args.length == 2 && args[0].equalsIgnoreCase("arrow")) {
