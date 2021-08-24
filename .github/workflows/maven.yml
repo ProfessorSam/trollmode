@@ -24,3 +24,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn clean install
+    - name: collect artifact
+      uses: actions/upload-artifact@v2
+      with:
+        path: target/*.jar
