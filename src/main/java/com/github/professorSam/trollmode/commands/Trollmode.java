@@ -31,10 +31,10 @@ public class Trollmode implements CommandExecutor{
 						player.sendMessage(Main.getPrefix() + "§9/trollmode unvanish §7- Hohlt dich aus dem Vanish!");
 						player.sendMessage(Main.getPrefix() + "§9/trollmode freeze [Spieler] §7- Lässt einen Spieler sich nicht mehr bewegen");
 						player.sendMessage(Main.getPrefix() + "§9/trollmode explode [Spieler] §7- Jagt einen Spieler in die Luft");
-						player.sendMessage(Main.getPrefix() + "§9/trollmode jail [Spieler] §7- Sperrt einen Spieler in ein Bedrock K�fig");
-						player.sendMessage(Main.getPrefix() + "§9/trollmode unjail [Spieler] §7- Befreit einen Spieler aus einen K�fig");
+						player.sendMessage(Main.getPrefix() + "§9/trollmode jail [Spieler] §7- Sperrt einen Spieler in ein Bedrock Käfig");
+						player.sendMessage(Main.getPrefix() + "§9/trollmode unjail [Spieler] §7- Befreit einen Spieler aus einen Käfig");
 						player.sendMessage(Main.getPrefix() + "§9/trollmode control [Spieler] §7- Kontroliere einen Spieler");
-						player.sendMessage(Main.getPrefix() + "§9/trollmode arrow [Spieler] §7- Spawnt jede Sekunde einen Pfeil �ber den Spieler");
+						player.sendMessage(Main.getPrefix() + "§9/trollmode arrow [Spieler] §7- Spawnt jede Sekunde einen Pfeil über den Spieler");
 						player.sendMessage(Main.getPrefix() + "§9/trollmode tpall §7- Teleportiert alle Spieler zu dir");
 						player.sendMessage(Main.getPrefix() + "§e---Trollmode hilfe---");
 						return true;
@@ -125,7 +125,7 @@ public class Trollmode implements CommandExecutor{
 					for(Player players : Bukkit.getOnlinePlayers()) {
 						players.sendTitle("§4Trollmode", "§cTrollmode wurde aktiviert");
 						players.playSound(player.getLocation(), Sound.GHAST_SCREAM, 2F, 1F);
-						players.sendMessage(Main.getPrefix() + "�4Der Trollmode ist nun aktiviert!");
+						players.sendMessage(Main.getPrefix() + "§4Der Trollmode ist nun aktiviert!");
 						Freeze.registerFreezePlayer(players);
 						Control.registerControlPlayer(players);
 						Arrow.registerArrowPlayer(players);
