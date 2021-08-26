@@ -1,2 +1,13 @@
+#General Settings
 Settings:
-  Prefix: "§7[§f§4Trollmode§r§7] "
+  Prefix: "§7[§f§4Trollmode§r§7] " #Use for color-Codes "§" instead of "&"
+  Vanish: true #Set to false to deactivate!
+  Freeze: true
+  Explode: true
+  Jail: true
+  Control: true
+  Arrow: true
+  Tpall: true
+#Made by Professor_Sam:
+#Github: Github.com/ProfessorSam
+#Discord: ProfSam#3975
