@@ -29,4 +29,4 @@ Trollmode unterstützt folgende Minecraft-Versionen:
 Es empfielt sich ein Cloudsystem wie z.B CloudNet v3 zu nutzen, da man somit ganz einfach die Map zurücksetzten kann. Man kann sonst ebenfalls die dementsprechende Funktion in der Config.yml deaktivieren oder ein Plugin zum zurücksetzten nutzen  __sollte das Minigame die Map nicht von alleine zurücksetzten__
 
 ## Download
-Um die neuste version zu erhalten [klicke hier](https://github.com/ProfessorSam/trollmode/releases)
+Um die neuste version zu erhalten [klicke hier](https://github.com/ProfessorSam/trollmode/releases) oder compile es selber mit maven via: ``mvn clean install``
