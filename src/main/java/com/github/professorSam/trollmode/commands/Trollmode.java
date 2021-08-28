@@ -161,7 +161,7 @@ public class Trollmode implements CommandExecutor{
 					Main.setTrollmodeActive(true);
 					for(Player players : Bukkit.getOnlinePlayers()) {
 						players.sendTitle("§4Trollmode", "§cTrollmode wurde aktiviert");
-						players.playSound(player.getLocation(), Sound.GHAST_SCREAM, 2F, 1F);
+						players.playSound(player.getLocation(), Sound.GHAST_SCREAM2, 2F, 1F);
 						players.sendMessage(Main.getPrefix() + "§4Der Trollmode ist nun aktiviert!");
 						Freeze.registerFreezePlayer(players);
 						Control.registerControlPlayer(players);
